@@ -8,7 +8,7 @@
 2. 概率密度估计 (Probabilistic density estimation)，主要方法可以分为参数密度估计 (Parametric density estimation) 和非参数密度 (Nonparametric density estimation) 估计两种；
 3. 聚类 (Clustering) ，常见的算法包括 [k-means 算法](https://en.wikipedia.org/wiki/K-means_clustering)、[谱聚类 (Spectral clustering)](https://www.cnblogs.com/pinard/p/6221564.html) 等。
 
-自编码器是一种无监督特征学习的神经网络模型，它的学习目标是将输入层数据 $x$ 通过转换得到其隐藏层的表示 <img src="https://render.githubusercontent.com/render/math?math=h(x)" alt="-w" style="zoom:100%;" />，然后由隐藏层重构（编码），还原出新的输入数据 <img src="https://render.githubusercontent.com/render/math?math=\widehat{x}" alt="-w" style="zoom:100%;" />（解码），训练目标则是使得重构之后的数据 $\widehat{x}$ 能够尽量的还原输入层的数据 <img src="https://render.githubusercontent.com/render/math?math=x" alt="-w" style="zoom:100%;" />。如果输出层的数值是任意的数值，则通常采用均方误差来定义损失函数，而对于二值神经网络，损失函数则通常可以由交叉熵来定义。在自编码器学习到有效的数据表示（特征）之后，则可以利用 k-means算法（无监督学习聚类模型）实现对原始输入数据的聚类。
+自编码器是一种无监督特征学习的神经网络模型，它的学习目标是将输入层数据 $x$ 通过转换得到其隐藏层的表示 <img src="https://render.githubusercontent.com/render/math?math=h(x)" alt="-w" style="zoom:100%;" />，然后由隐藏层重构（编码），还原出新的输入数据 <img src="https://render.githubusercontent.com/render/math?math=\widehat{x}" alt="-w" style="zoom:100%;" />（解码），训练目标则是使得重构之后的数据 <img src="https://render.githubusercontent.com/render/math?math=\widehat{x}" alt="-w" style="zoom:100%;" /> 能够尽量的还原输入层的数据 <img src="https://render.githubusercontent.com/render/math?math=x" alt="-w" style="zoom:100%;" />。如果输出层的数值是任意的数值，则通常采用均方误差来定义损失函数，而对于二值神经网络，损失函数则通常可以由交叉熵来定义。在自编码器学习到有效的数据表示（特征）之后，则可以利用 k-means算法（无监督学习聚类模型）实现对原始输入数据的聚类。
 
 需要安装的库包括：
 
