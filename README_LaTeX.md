@@ -8,7 +8,7 @@
 2. 概率密度估计 (Probabilistic density estimation)，主要方法可以分为参数密度估计 (Parametric density estimation) 和非参数密度 (Nonparametric density estimation) 估计两种；
 3. 聚类 (Clustering) ，常见的算法包括 [k-means 算法](https://en.wikipedia.org/wiki/K-means_clustering)、[谱聚类 (Spectral clustering)](https://www.cnblogs.com/pinard/p/6221564.html) 等。
 
-自编码器是一种无监督特征学习的神经网络模型，它的学习目标是将输入层数据 $x$ 通过转换得到其隐藏层的表示 <img src="https://render.githubusercontent.com/render/math?math=h(x)" alt="-w" style="zoom:100%;" />，然后由隐藏层重构（编码），还原出新的输入数据 <img src="https://render.githubusercontent.com/render/math?math=\widehat{x}" alt="-w" style="zoom:100%;" />（解码），训练目标则是使得重构之后的数据 $\widehat{x}$ 能够尽量的还原输入层的数据 <img src="https://render.githubusercontent.com/render/math?math=x" alt="-w" style="zoom:100%;" />。如果输出层的数值是任意的数值，则通常采用均方误差来定义损失函数，而对于二值神经网络，损失函数则通常可以由交叉熵来定义。在自编码器学习到有效的数据表示（特征）之后，则可以利用 k-means算法（无监督学习聚类模型）实现对原始输入数据的聚类。
+自编码器是一种无监督特征学习的神经网络模型，它的学习目标是将输入层数据 $x$ 通过转换得到其隐藏层的表示 $h(x)$，然后由隐藏层重构（编码），还原出新的输入数据 $\widehat{x}$（解码），训练目标则是使得重构之后的数据 $\widehat{x}$ 能够尽量的还原输入层的数据 $x$。如果输出层的数值是任意的数值，则通常采用均方误差来定义损失函数，而对于二值神经网络，损失函数则通常可以由交叉熵来定义。在自编码器学习到有效的数据表示（特征）之后，则可以利用 k-means算法（无监督学习聚类模型）实现对原始输入数据的聚类。
 
 需要安装的库包括：
 
@@ -48,7 +48,7 @@ matplotlib 2.0.2
 
 #### k-means 算法 - 特征聚类
 
-K-means 算法是当前最流行和经典的聚类方法之一，其核心思想是：对数据集 <img src="https://render.githubusercontent.com/render/math?math=D=\left%20\{%20x^{1},%20x^{2},%20...%20,%20x^{m}%20\right%20\}" alt="-w" style="zoom:100%;" />，考虑所有可能的 <img src="https://render.githubusercontent.com/render/math?math=k" alt="-w" style="zoom:120%;" /> 个簇集合，希望能找到一个簇集合 <img src="https://render.githubusercontent.com/render/math?math=\left%20\{%20C^{1},%20C^{2},%20...%20,%20C^{k}%20\right%20\}" alt="-w" style="zoom:100%;" />，使得每个点到对应簇的中心的距离的平方和最小。
+K-means 算法是当前最流行和经典的聚类方法之一，其核心思想是：对数据集 $D=\left \{ x^{1}, x^{2}, ... , x^{m} \right \}$，考虑所有可能的 $k$ 个簇集合，希望能找到一个簇集合 $\left \{ C^{1}, C^{2}, ... , C^{k} \right \}$，使得每个点到对应簇的中心的距离的平方和最小。
 
 最终得到 0, 1 图像在自编码器特征映射之后的空间分布及通过 k-means 算法实现特征映射的聚类（红色五角星标记的是两个类簇的中心）。
 
