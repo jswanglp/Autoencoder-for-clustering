@@ -55,6 +55,12 @@ K-means 算法是当前最流行和经典的聚类方法之一，其核心思想
 <div align="center">
 <img src="./images/AE-kmeans.png" alt="AE-kmeans.png" height="300" width="600">
 </div>
+
+完整的实现代码及 `jupyter notebook` 已经上传至该 `repo` 的 `codes` 和 `notebooks` 文件夹，训练过程的 `event logs` 则是在 `resources` 文件夹下，分别对应的是本地的训练及在 `Google Colab` 中的训练：
+
+- [AE-kmeans.py](./codes/AE-kmeans.py)
+- [AE-kmeans.ipynb](./notebooks/AE-kmeans.ipynb)
+
 -----
 
 ##### 脚注 (Footnote)
